@@ -1,0 +1,17 @@
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX :    <http://bigcat.unimaas.nl/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wde:    <http://www.wikidata.org/entity/>
+
+start=@:publication
+
+:publication EXTRA wde:P31 {
+    wde:P31 [ wde:Q732577 ] ;
+	wde:P50 @:author *;
+}
+
+:author EXTRA wde:P31 {
+    wde:P31 [ wde:Q5 ] ;
+}
+
