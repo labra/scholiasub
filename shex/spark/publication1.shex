@@ -4,17 +4,23 @@ PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wde:    <http://www.wikidata.org/entity/>
 
+
 start=@:publication
 
-:publication EXTRA wde:P31 {
-    wde:P31 @:publication_type ;
-	wde:P50 @:author *;
+:publication {
+  wde:P50   @:author +;
 }
 
 :author EXTRA wde:P31 {
-    wde:P31 @:author_type ;
+  wde:P31 @:author_type ;
+  wde:P27 @:country + 
+}
+
+:country EXTRA wde:P31 {
+  wde:P31 @:country_type ;
 }
 
 :author_type      [ wde:Q5 ]
-:publication_type [ wde:Q732577 ]
+:country_type     [ wde:Q6256 ]
+
 
